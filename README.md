@@ -12,17 +12,16 @@ First steps towards a [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localiza
 Note: This is an incomplete first draft and everything is under heavy construction.
 The notebooks don't always render right on Github; the links point to the notebooks in Jupyter's "nbviewer":
 
-- [1_Sensor_model_with_pose_prior.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/1_Sensor_model_with_pose_prior.ipynb.ipynb)
+- [1 Sensor model with pose prior](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/1_Sensor_model_with_pose_prior.ipynb)
 	- Simple Lidar sensor model 
 	- Naive pose inference
 	
-- [2_Controller_and_transition_model.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/2_Controller_and_transition_model.ipynb)
-	- Simple motion model:
-	- Ghost motion model
-	- Actual motion model
-	- ...
+- [2 Controller and transition model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/2_Controller_and_transition_model.ipynb)
+	- Simple Model with controller and transitions
+	- Path planning
 
-- [3_Map_playground.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/3_Map_playground.ipynb)
+- [3 Map playground](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/3_Map_playground.ipynb)
+	- The idea was to play with different map types here....	 
 
 
 **Some plots from the notebooks.**

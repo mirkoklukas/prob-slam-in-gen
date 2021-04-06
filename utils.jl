@@ -1,3 +1,8 @@
+function my_set_submap!(target, addr, source)
+    Gen.set_submap!(target, addr, get_submap(source, addr))
+end
+
+
 """
     StructIterator
 
@@ -42,3 +47,23 @@ end
 
 has_output_grad(::MultivariateUniform) = false;
 has_argument_grads(::MultivariateUniform) = (false,);
+
+
+
+
+logit(p::Real) = log(p/(1 -p))
+ell(p::Real) = logit(p)
+expit(ell::Real) = 1 - 1/(1 + exp(ell));
+
+
+Vec(i::CartesianIndex{2}) = Float64[Tuple(i)...];
+Float64(i::CartesianIndex{2}) = Float64[Tuple(i)...];
+
+
+@dist function labeled_cat(labels, probs)
+    index = categorical(probs)
+    labels[index]
+end;
+
+
+

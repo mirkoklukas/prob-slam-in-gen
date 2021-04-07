@@ -71,3 +71,23 @@ struct Env
 end
 
 
+function draw_segs!(segs; c="black", ax=plt.gca(), alpha=1.)
+    ax.plot(segs[:,[1, 3]]', segs[:,[2, 4]]', c=c, alpha=alpha, linewidth=1, zorder=1); 
+end
+
+
+function draw_env!(env; ax = plt.gca(), title="", alpha=1., zorder=1, 
+                   wall="black", grass="lightgray", floor="w" )
+    v = vcat(env.verts, env.verts[[1],:])
+    
+
+    box = env.bounds[:,:]
+    box[:,1] .-= 2.
+    box[:,2] .+= 2.
+    box = hcat([box[:,1], [box[1,2], box[2,1]], [box[1,2], box[2,2]],  [box[1,1], box[2,2]], box[:,1]]...)
+
+    ax.set_title(title)
+    ax.fill(box[1,:],box[2,:], c=grass, alpha=1., zorder=-1);
+    ax.fill(v[:,1], v[:,2], c=floor, linewidth=0, zorder=-1);
+    ax.plot(v[:,1], v[:,2], c=wall, alpha=alpha, linewidth=1, zorder=zorder);
+end;

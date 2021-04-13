@@ -6,50 +6,13 @@ First steps towards a [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localiza
 > Learning-based Algorithms on Mobile Robots", arXiv (2019).
 
 
-
 **Overview.**
 
 Note: This is an incomplete first draft and everything is under heavy construction.
 The notebooks don't always render right on Github; the links point to the notebooks in Jupyter's "nbviewer":
 
-- [1 Sensor model with pose prior](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/1_Sensor_model_with_pose_prior.ipynb)
-	- Simple Lidar sensor model 
-	- Naive pose inference
-	
-- [2 Controller and transition model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/2_Controller_and_transition_model.ipynb)
-	- Simple Model with controller and transitions
-	- Path planning
+- [Part 1 - Occupancy map with sensor model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/01_SLAM_Tutorial_Part_1.ipynb)
+	- ...
 
-- [3 Map playground](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/3_Map_playground.ipynb)
-	- The idea was to play with different map types here....	 
-
-
-**Some plots from the notebooks.**
-
-![Sensor Image](png/sensor.png)
-
-**Fig 1: Basic Lidar model.** 
-Left: Pose of the agent and its measurements. 
-Right: The depth measurements as a function of angles. 
-(The head direction corresponds to the center of the plot.)
-
-
-![Naive Localization Image](png/naive_localization.png)
-
-**Fig 2: Naive localization with known map and no motion.**
-Left: True pose of the agent and its measurements. Middle: Naive MC inference. Gray values indicate probabilies of the respective poses, and the pink marker is placed at the mode of the posterior `p(x | z)`. Right: Same as in middle but we are actually showing the orientation of the agent not only its position; colormap varies from blue (low) to warm (high).
-
-![Ghost model](png/ghost.png)
-
-**Fig 3: Motion model.** 
-Naive agent motion model that can walk through walls.
-
-![Ghost model](png/motion_2.png)
-
-**Fig 4: Better Motion model.** 
-Agent motion model that is somewhat aware of boundaries.
-
-![Sensor Image](png/house_expo.png)
-
-**Fig 5: Environments.** 
-Excerpts from the *HouseExpo* dataset
+- [Part 2 - Motion model and SLAM model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/02_SLAM_Tutorial_Part_2.ipynb)
+	- ...

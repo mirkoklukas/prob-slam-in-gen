@@ -24,7 +24,7 @@ function load_env(i::Union{Int64, Nothing}=nothing;
         env = JSON.parse(read(f, String))
     end
 
-    return Env(env) 
+    return Env(env, i) 
 end
 
 
@@ -67,7 +67,8 @@ struct Env
     verts::Array{Float64, 2}
     segs::Array{Float64, 2}
     bounds::Array{Float64, 2}
-    Env(env::Dict) = new(get_verts(env), get_segs(env), get_bounds(env))
+    id::Int64
+    Env(env::Dict, i::Int64=-1) = new(get_verts(env), get_segs(env), get_bounds(env), i)
 end
 
 
@@ -76,7 +77,7 @@ function draw_segs!(segs; c="black", ax=plt.gca(), alpha=1.)
 end
 
 
-function draw_env!(env; ax = plt.gca(), title="", alpha=1., zorder=1, 
+function draw_env!(env; ax = plt.gca(), title="", alpha=1., zorder=1, l=1.,
                    wall="black", grass="lightgray", floor="w" )
     v = vcat(env.verts, env.verts[[1],:])
     
@@ -89,5 +90,6 @@ function draw_env!(env; ax = plt.gca(), title="", alpha=1., zorder=1,
     ax.set_title(title)
     ax.fill(box[1,:],box[2,:], c=grass, alpha=1., zorder=-1);
     ax.fill(v[:,1], v[:,2], c=floor, linewidth=0, zorder=-1);
-    ax.plot(v[:,1], v[:,2], c=wall, alpha=alpha, linewidth=1, zorder=zorder);
+    ax.plot(v[:,1], v[:,2], c=wall, alpha=alpha, linewidth=l, zorder=zorder);
 end;
+

@@ -64,6 +64,18 @@ end;
 
 
 """
+    is_inside(x, segs)
+
+Checks whether `x` lies within the polygon described 
+by the segments `segs`.
+"""
+function is_inside(x, segs)
+    X, C, S, T = ray_coll([x;x+[rand(),rand()]], segs)
+    return sum(C)%2!=0
+end;
+
+
+"""
     angles(fov::Int64=180, n=100)
 
 Range of angles from `-fov` degrees to `+fov` degrees,
@@ -83,18 +95,18 @@ function lightcone(θs, r=1.0)
 end
 
 """
-    cast(rays, x, env::Env; max_val=Inf)
+    cast(rays, x, segs; max_val=Inf)
 
-Cast a bunch of rays from `x` in `env`.
-Returns a vector of depths of their intersection
+Cast a bunch of rays from a position in a world populated
+by wall segments. Returns a vector of depths of their intersection
 with the environment segments.
 """
-function cast(rays, x, env::Env; max_val=Inf)
+function cast(rays, x, segs; max_val=Inf)
     n = size(rays, 1)
     z = zeros(n)
     for i in 1:n
         r = rays[i,:] .+ [x; x]
-        X, C, S, T = ray_coll(r, env.segs)
+        X, C, S, T = ray_coll(r, segs)
         if sum(C) > 0
             z[i] = min(S[C]..., max_val)
         else
@@ -121,14 +133,3 @@ function draw_rays!(rays, z, x; every=10,c="C1", alpha=0.1, ax=plt.gca())
     ax.plot(r[:,[1, 3]]', r[:,[2, 4]]', c=c, alpha=alpha, linewidth=1, zorder=0); 
 end;
 
-
-"""
-    is_inside(x, segs)
-
-Checks whether `x` lies within the polygon described 
-by the segments `segs`.
-"""
-function is_inside(x, segs)
-    X, C, S, T = ray_coll([x;x+[rand(),rand()]], segs)
-    return sum(C)%2!=0
-end;

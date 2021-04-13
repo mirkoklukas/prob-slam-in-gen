@@ -17,6 +17,10 @@ The notebooks don't always render right on Github; the links point to the notebo
 - [Part 2 - Motion model and SLAM model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/02_SLAM_Tutorial_Part_2.ipynb)
 	- ...
 
+- [A00_Sensor_model_w_drop_out.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/A00_Sensor_model_w_drop_out.ipynb)
+- [X01_Sensor_model_with_pose_prior.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/X01_Sensor_model_with_pose_prior.ipynb)
+- [X02_Motion_model_and_localization_part.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/X02_Motion_model_and_localization_part.ipynb)
+- [X03_Localization_with_loosened_sensor.ipynb](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/X03_Localization_with_loosened_sensor.ipynb)
 
 
 

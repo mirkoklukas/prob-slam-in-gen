@@ -11,8 +11,8 @@ First steps towards a [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localiza
 Note: This is an incomplete first draft and everything is under heavy construction.
 The notebooks don't always render right on Github; the links point to the notebooks in Jupyter's "nbviewer":
 
-- [Part 1 - Occupancy map with sensor model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/01_SLAM_Tutorial_Part_1.ipynb)
+- [Part 1 - Occupancy map with sensor model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/01_SLAM_Tutorial_Part_1.ipynb)
 	- ...
 
-- [Part 2 - Motion model and SLAM model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/02_SLAM_Tutorial_Part_2.ipynb)
+- [Part 2 - Motion model and SLAM model](https://nbviewer.jupyter.org/github/mirkoklukas/prob-slam-in-gen/blob/master/02_SLAM_Tutorial_Part_2.ipynb)
 	- ...
